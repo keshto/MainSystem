@@ -1,0 +1,18 @@
+name: 'Build World'
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  start:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup latest Alpine Linux
+        uses: jirutka/setup-alpine@v1
+        with:
+          branch: edge
+          packages: >
+            build-base
+            alpine-sdk
